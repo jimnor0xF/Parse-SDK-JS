@@ -1517,6 +1517,23 @@ describe('Parse Object', () => {
       });
   });
 
+  it('can saveAll transactions', done => {
+    const objects = [];
+    for (let i = 0; i < 200; i++) {
+      objects[i] = new TestObject();
+    }
+
+    Parse.Object.saveAll(objects, { transaction: true})
+      .then((res) => {
+        console.log("RES@@@@@", res)
+        done()
+      })
+      .catch(e => {
+        console.log(e)
+        done()
+      });
+  });
+
   it('can fetchAll', done => {
     const numItems = 11;
     const container = new Container();

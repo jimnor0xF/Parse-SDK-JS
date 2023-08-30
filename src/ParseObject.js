@@ -1751,6 +1751,9 @@ class ParseObject {
     if (options.hasOwnProperty('batchSize') && typeof options.batchSize === 'number') {
       destroyOptions.batchSize = options.batchSize;
     }
+    if (options.hasOwnProperty('transaction')) {
+      destroyOptions.transaction = options.transaction;
+    }
     if (options.hasOwnProperty('context') && typeof options.context === 'object') {
       destroyOptions.context = options.context;
     }
@@ -1785,6 +1788,9 @@ class ParseObject {
     }
     if (options.hasOwnProperty('batchSize') && typeof options.batchSize === 'number') {
       saveOptions.batchSize = options.batchSize;
+    }
+    if (options.hasOwnProperty('transaction')) {
+      saveOptions.transaction = options.transaction;
     }
     if (options.hasOwnProperty('context') && typeof options.context === 'object') {
       saveOptions.context = options.context;
